@@ -1,33 +1,40 @@
-name: Postman API Test
+name: API Security with Authenticated ZAP
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
 
 jobs:
-  postman-test:
+  security-scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
 
-    - name: Install Node
-      uses: actions/setup-node@v3
+    # 1️⃣ Call API directly (sanity check)
+    - name: Call API using curl
+      run: |
+        curl -i --location 'http://restapi-qa.trackier.io/v2/campaigns/25946' \
+        --header "x-api-key: ${{ secrets.TRACKIER_API_KEY }}"
+
+    # 2️⃣ Run Authenticated ZAP Scan
+    - name: Run ZAP Full Scan with API Key
+      uses: zaproxy/action-full-scan@v0.7.0
       with:
-        node-version: '18'
+        target: 'http://restapi-qa.trackier.io'
+        fail_action: false
+        cmd_options: >
+          -z "
+          -config replacer.full_list(0).description=api-key
+          -config replacer.full_list(0).enabled=true
+          -config replacer.full_list(0).matchtype=REQ_HEADER
+          -config replacer.full_list(0).matchstr=x-api-key
+          -config replacer.full_list(0).replacement=${{ secrets.TRACKIER_API_KEY }}
+          "
 
-    - name: Install Newman
-      run: npm install -g newman
-
-    - name: Inject API Key into Environment
-      run: |
-        jq '.values[] |= if .key=="api_key" then .value="${{ secrets.TRACKIER_API_KEY }}" else . end' \
-        postman/environment.json > temp.json
-        mv temp.json postman/environment.json
-
-    - name: Run Postman Collection
-      run: |
-        newman run postman/collection.json \
-        --environment postman/environment.json \
-        --reporters cli
+    # 3️⃣ Upload ZAP Report
+    - name: Upload ZAP Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: zap-report
+        path: report_html.html
