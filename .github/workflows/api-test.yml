@@ -1,7 +1,7 @@
 name: API Security with Authenticated ZAP
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:   # Manual trigger button
   push:
     branches: [ main ]
 
@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
     # 1️⃣ Call API directly (sanity check)
     - name: Call API using curl
