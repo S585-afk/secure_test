@@ -1,0 +1,33 @@
+name: Postman API Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  postman-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Inject API Key into Environment
+      run: |
+        jq '.values[] |= if .key=="api_key" then .value="${{ secrets.TRACKIER_API_KEY }}" else . end' \
+        postman/environment.json > temp.json
+        mv temp.json postman/environment.json
+
+    - name: Run Postman Collection
+      run: |
+        newman run postman/collection.json \
+        --environment postman/environment.json \
+        --reporters cli
