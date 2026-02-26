@@ -1,1 +1,22 @@
+name: ZAP API Security Scan - Trackier Fraud Rules
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    name: ZAP Baseline Scan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.10.0
+        with:
+          target: 'https://api.trackier.com/v2/fraudrules?apiKey=123'
+          fail_action: false
+          cmd_options: '-a'
