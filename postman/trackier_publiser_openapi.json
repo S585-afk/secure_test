@@ -30,7 +30,7 @@
         }
       }
     },
-    "/v2/publishers/17/transactions": {
+    "/v2/publishers/4/transactions": {
       "get": {
         "summary": "Transactions & Payments",
         "responses": {
@@ -153,7 +153,7 @@
         }
       }
     },
-    "/v2/publishers/17/subaccounts/16": {
+    "/v2/publishers/4/subaccounts/3": {
       "post": {
         "summary": "Edit Sub Account of Publisher",
         "responses": {
@@ -204,7 +204,7 @@
         }
       }
     },
-    "/v2/publishers/17/subaccounts": {
+    "/v2/publishers/4/subaccounts": {
       "post": {
         "summary": "Create Sub Account for Publisher",
         "responses": {
@@ -239,7 +239,7 @@
         }
       }
     },
-    "/v2/publishers/17/notes/68b5440e4d740b1ce046766f": {
+    "/v2/publishers/4/notes/68b5440e4d740b1ce046766f": {
       "get": {
         "summary": "Find Publisher Note",
         "responses": {
@@ -277,7 +277,7 @@
         }
       }
     },
-    "/v2/publishers/17/notes": {
+    "/v2/publishers/4/notes": {
       "get": {
         "summary": "Find All Publisher Notes",
         "responses": {
