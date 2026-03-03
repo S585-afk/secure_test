@@ -21,7 +21,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         format: openapi
-        target: 'openapi/openapi.yaml'
+        target: '.github/workflows/trackier-full-openapi.yaml'
         fail_action: false
         cmd_options: >
           -a
