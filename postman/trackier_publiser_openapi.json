@@ -378,3 +378,25 @@
         }
       }
     },
+"x-components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Api-Key"
+      }
+    }
+  },
+  "x-security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ]
+}
+
+
+
+
+
+
+    
