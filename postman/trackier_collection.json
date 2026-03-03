@@ -1,0 +1,4105 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Trackier Admin API Docs",
+        "version": "1.0.0",
+        "description": "Full OpenAPI generated from Postman collection"
+    },
+    "servers": [
+        {
+            "url": "https://api.trackier.com"
+        }
+    ],
+    "paths": {
+        "/v2/offers/incent": {
+            "get": {
+                "summary": "Find all incent offers",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/17/transactions": {
+            "get": {
+                "summary": "Transactions & Payments",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/:id": {
+            "get": {
+                "summary": "Find Publisher by ID",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a publisher",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/921": {
+            "post": {
+                "summary": "Edit a publisher",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "username": "test"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/publishers/:publisherId/subaccounts/:id": {
+            "get": {
+                "summary": "Find Sub Account of Publisher By Id",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Sub Account of Publisher",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/17/subaccounts/16": {
+            "post": {
+                "summary": "Edit Sub Account of Publisher",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/publishers/:publisherId/subaccounts": {
+            "get": {
+                "summary": "Get All Sub Accounts of Publisher",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/17/subaccounts": {
+            "post": {
+                "summary": "Create Sub Account for Publisher",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string",
+                                    "email": "{{unique_email}}",
+                                    "status": "paused",
+                                    "username": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/publishers/17/notes/68b5440e4d740b1ce046766f": {
+            "get": {
+                "summary": "Find Publisher Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/:pubId/notes/:noteId": {
+            "delete": {
+                "summary": "Delete Publisher Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/17/notes": {
+            "get": {
+                "summary": "Find All Publisher Notes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Publisher Notes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "message": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/publishers": {
+            "get": {
+                "summary": "Find all publishers",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "createpubliser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "username": "Nikhiltestuser02",
+                                    "name": "Test User",
+                                    "email": "testuseor9902@example.com",
+                                    "password": "Test@1234"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:advertiserId/subaccounts/:id": {
+            "get": {
+                "summary": "Find Sub Account of Advertiser By Id",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Sub Account of Advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/925/subaccounts/1": {
+            "post": {
+                "summary": "Edit Sub Account of Advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:advertiserId/subaccounts": {
+            "get": {
+                "summary": "Get All Sub Accounts of Advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/925/subaccounts": {
+            "post": {
+                "summary": "Create Sub Account for Advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string",
+                                    "email": "{{unique_email}}",
+                                    "status": "paused",
+                                    "username": "string",
+                                    "password": "string",
+                                    "meta": {
+                                        "skype": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:id": {
+            "get": {
+                "summary": "Find a single advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an Advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/925": {
+            "post": {
+                "summary": "Update an Advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "username": "test"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:advertiser_id/caps/:cap_id": {
+            "get": {
+                "summary": "Find an Advertiser Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Advertiser Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/417/caps/68b8721f520a3534146c5c37": {
+            "post": {
+                "summary": "Edit Advertiser Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "conversion",
+                                    "pubCapType": "group",
+                                    "daily": 3823
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:advertiser_id/caps": {
+            "get": {
+                "summary": "Find All Advertiser Caps",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/417/caps": {
+            "post": {
+                "summary": "Create Advertiser Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "approvedConv",
+                                    "pubCapType": "group",
+                                    "daily": 6731
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:advId/notes/:noteId": {
+            "get": {
+                "summary": "Find Advertiser Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Advertiser Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/:advId/notes": {
+            "get": {
+                "summary": "Find All Advertiser Notes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Advertiser Notes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "message": "tesrt"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/advertisers": {
+            "get": {
+                "summary": "Find All Advertisers",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create an advertiser",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string",
+                                    "email": "{{unique_email}}",
+                                    "password": "string",
+                                    "username": "string",
+                                    "company": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/login": {
+            "post": {
+                "summary": "Basic Login Endpoint",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "password": "test@123#",
+                                    "email": "newmem@yopmail.com",
+                                    "networkUrl": "https://internal-demo.trackier.io/"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/thumbnail": {
+            "post": {
+                "summary": "Edit Campaign Thumbnail",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Campaign Thumbnail",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/s2s-tracking": {
+            "post": {
+                "summary": "Edit Campaign S2S Tracking Setting",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/impression-tracking": {
+            "post": {
+                "summary": "Edit Campaign Impression Tracking Setting",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/caps/68a454610022a23e5975c5d4": {
+            "post": {
+                "summary": "Edit a Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "clicks"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/caps/:capId": {
+            "delete": {
+                "summary": "Delete a Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/caps": {
+            "get": {
+                "summary": "Find Campaign Caps",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/caps": {
+            "post": {
+                "summary": "Create Campaign Cap",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "netRevenue",
+                                    "visibility": "public",
+                                    "pubCapType": "group",
+                                    "daily": 4971,
+                                    "geo": [
+                                        "IN",
+                                        "AU"
+                                    ],
+                                    "redirect": "blank"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/lps/68a45534dd43b9780f1c8a5f": {
+            "post": {
+                "summary": "Edit a Landing Page",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "title": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/lps/:lpId": {
+            "delete": {
+                "summary": "Delete a Landing Page",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/lps": {
+            "get": {
+                "summary": "FindAll landing pages",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/lps": {
+            "post": {
+                "summary": "Create a Landing Page",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "title": "string",
+                                    "url": "https://google.com",
+                                    "status": "active",
+                                    "lpType": "landing"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/payouts/65b9040f9745225b743443c9": {
+            "post": {
+                "summary": "Edit a payout",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "payout": 1413.2303857106199,
+                                    "revenue": 344.55149820354245
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/payouts/:payoutId": {
+            "delete": {
+                "summary": "Delete a payout",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/payouts": {
+            "get": {
+                "summary": "Get Campaign Payouts",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/payouts": {
+            "post": {
+                "summary": "Add new campaign payout",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "payout": 1413.2303857106199,
+                                    "revenue": 344.55149820354245,
+                                    "geo": [
+                                        "IN",
+                                        "AU"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/goals/68a430bc0022a23e5970045a": {
+            "post": {
+                "summary": "Edit Campaign Goal",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "title": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/goals/:goalId": {
+            "delete": {
+                "summary": "Delete a campaign goal",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/goals": {
+            "get": {
+                "summary": "Get Campaign Goals",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/goals": {
+            "post": {
+                "summary": "Create Campaign Goal",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "title": "test",
+                                    "value": "{{goal_value}}",
+                                    "type": "public",
+                                    "trackMultiConv": 0,
+                                    "payout_model": "fixed",
+                                    "payouts": [
+                                        {
+                                            "payout": 10,
+                                            "revenue": 10,
+                                            "geo": [
+                                                "IN"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id/targetings": {
+            "get": {
+                "summary": "Get All Campaign Targetings",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Campaign Targeting",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "api-source-targeting",
+                                    "condition": "or",
+                                    "event": "all",
+                                    "rules": [
+                                        {
+                                            "variable": "source",
+                                            "logic": "deny",
+                                            "condition": "equals",
+                                            "values": [
+                                                "abcdefgh",
+                                                "foobar"
+                                            ]
+                                        },
+                                        {
+                                            "variable": "os",
+                                            "logic": "deny",
+                                            "condition": "regex",
+                                            "values": [
+                                                "ios"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:id": {
+            "get": {
+                "summary": "Find Campaign by ID",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Edit a campaign",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "title": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a campaign",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/timelines": {
+            "get": {
+                "summary": "Get Campaigns Timelines.",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/categories": {
+            "get": {
+                "summary": "Get all campaigns categories",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/status": {
+            "post": {
+                "summary": "Bulk Campaign Status Change",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "campaignIds": [
+                                        8757,
+                                        6904
+                                    ],
+                                    "status": "paused"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/bulkEdit": {
+            "post": {
+                "summary": "Bulk Campaign Edit",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "campaignIds": [
+                                        358,
+                                        357
+                                    ],
+                                    "fields": {
+                                        "status": "active",
+                                        "vis": "private",
+                                        "currency": "INR"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/access": {
+            "get": {
+                "summary": "Find Campaign Access",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Update Campaign Access",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "campaign_ids": [
+                                        358,
+                                        2223
+                                    ],
+                                    "publisher_ids": [
+                                        17,
+                                        29
+                                    ],
+                                    "type": "assign"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/targetings/68a41e816eb6e5d717bdb2c5/rules/68a41e816eb6e5d717bdb2c8": {
+            "post": {
+                "summary": "Edit Targeting Rule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "variable": "source",
+                                    "logic": "deny",
+                                    "condition": "less_than",
+                                    "values": [
+                                        "string",
+                                        "string"
+                                    ],
+                                    "osVersion": {
+                                        "min": 799.1789012209938,
+                                        "max": 5425.322306063777
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:campId/targetings/:id/rules/:ruleId": {
+            "delete": {
+                "summary": "Delete Targeting Rule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:campId/targetings/:id/rules": {
+            "post": {
+                "summary": "Add Rules to targeting block",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "rules": [
+                                        {
+                                            "variable": "source",
+                                            "logic": "deny",
+                                            "condition": "starts_with",
+                                            "values": [
+                                                "549_434_",
+                                                "983393_3393u3i3_"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:campId/targetings/:id": {
+            "get": {
+                "summary": "Get Campaign Targeting Rules",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Campaign Targeting",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Edit Campaign Targeting Block",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "targeting-block",
+                                    "condition": "and",
+                                    "publisherIds": [
+                                        2
+                                    ],
+                                    "excludedPubIds": []
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:campId/notes/:noteId": {
+            "get": {
+                "summary": "Find Campaign Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Update Campaign Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "message": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Campaign Note",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/:campId/notes": {
+            "get": {
+                "summary": "Find All Campaign Notes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/campaigns/358/notes": {
+            "post": {
+                "summary": "Create Campaign Notes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "message": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/campaigns": {
+            "get": {
+                "summary": "Get All Campaigns",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Campaign",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "advertiserId": 2,
+                                    "title": "test-camp",
+                                    "url": "https://google.com?click_id={click_id",
+                                    "currency": "INR",
+                                    "convTracking": "postback",
+                                    "payouts": [
+                                        {
+                                            "payout": 11,
+                                            "revenue": 110,
+                                            "geo": [
+                                                "IN",
+                                                "AU"
+                                            ]
+                                        }
+                                    ],
+                                    "status": "active",
+                                    "commModel": "cpa"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/trackingLink/2223/17": {
+            "post": {
+                "summary": "Generate Tracking Link",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "url": "string",
+                                    "prl": "string",
+                                    "url_id": "string",
+                                    "random_url": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/invoices/:id": {
+            "get": {
+                "summary": "Get Invoice By ID",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Invoice",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/invoices/preview": {
+            "get": {
+                "summary": "Get Invoice Preview",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/invoices": {
+            "get": {
+                "summary": "Get Invoices List",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Invoice",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "user_id": "5a7c0db2b6920d50913615b6",
+                                    "prefType": "campaign",
+                                    "start": "{{start_date}}",
+                                    "end": "{{end_date}}",
+                                    "invCurrency": "INR",
+                                    "skipZeroPayouts": false,
+                                    "payoutField": "string",
+                                    "adjust_inv": [
+                                        {
+                                            "type": "credit",
+                                            "note": "string",
+                                            "amount": 7399.427309354421
+                                        },
+                                        {
+                                            "type": "credit",
+                                            "note": "string",
+                                            "amount": 9012.761301168783
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/signupfields/publisher": {
+            "get": {
+                "summary": "Publisher Signup Questions",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/signupfields/advertiser": {
+            "get": {
+                "summary": "Advertiser SignUp Questions",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/network/notifications": {
+            "get": {
+                "summary": "Get Notifications",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/network/conversions": {
+            "get": {
+                "summary": "Conversion Report Logs",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/network/impressions": {
+            "get": {
+                "summary": "Impressions Report Logs",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/conversions/bulkUpload": {
+            "post": {
+                "summary": "Multiple conversions in data array",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/editConv": {
+            "post": {
+                "summary": "Conversion Status Change",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/jobs/:id": {
+            "get": {
+                "summary": "Find Job By Id",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/jobs": {
+            "get": {
+                "summary": "Find All Jobs",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/accounts/:account_id": {
+            "get": {
+                "summary": "Find Team Member",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/accounts/926": {
+            "post": {
+                "summary": "Edit Team Member",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/accounts": {
+            "get": {
+                "summary": "Find All Team Members",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add Team Member",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string",
+                                    "email": "{{unique_email}}",
+                                    "type": "afm",
+                                    "status": "inactive"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/postback": {
+            "post": {
+                "summary": "Create Postback",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "javascript_pixel",
+                                    "event": "conversion_goal",
+                                    "data": "https://google.com",
+                                    "status": "active",
+                                    "allowedConvStatus": "pending",
+                                    "campaignId": 358,
+                                    "publisherId": 17,
+                                    "blockZeroPayoutPb": true,
+                                    "eventId": "all"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/facebook/configurations": {
+            "get": {
+                "summary": "Publisher filter",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/facebook/configuration/641038f3a2bdbe3d132450cb": {
+            "get": {
+                "summary": "Valid configuration ID",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/facebook/configuration": {
+            "post": {
+                "summary": "Create configuration with valid data",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "FB Dataset India",
+                                    "pub_id": "63f466f3c6e77577775a0252",
+                                    "status": "active",
+                                    "fb_app_id": "123456789012345",
+                                    "dataset_id": "987654321098765",
+                                    "fb_app_secret": "YOUR_FB_APP_SECRET",
+                                    "fb_access_token": "YOUR_FB_ACCESS_TOKEN"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/facebook/configuration/6992beb663c867893e4c62a2": {
+            "patch": {
+                "summary": "Update Facebook configuration",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "FB Dataset India",
+                                    "status": "active",
+                                    "dataset_id": "987654321098765"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Facebook configuration",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/smart-link/:id": {
+            "delete": {
+                "summary": "Delete smartlink by id",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/smart-link/7G6rJQfwr": {
+            "post": {
+                "summary": "Edit Smartlink by Id",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "testing"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/smart-link": {
+            "post": {
+                "summary": "Create Smartlink",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "test",
+                                    "event": "impression",
+                                    "type": "category",
+                                    "model": "cps",
+                                    "description": "string",
+                                    "postback": false,
+                                    "status": "active",
+                                    "categories": [
+                                        "68889c0bad49c2b392093f2b"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get All Smartlinks",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/campaign": {
+            "get": {
+                "summary": "Campaign Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/publisher": {
+            "get": {
+                "summary": "Publisher Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/advertiser": {
+            "get": {
+                "summary": "Advertiser Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/daily": {
+            "get": {
+                "summary": "Daily Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/goal": {
+            "get": {
+                "summary": "Goal Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/custom": {
+            "get": {
+                "summary": "Custom Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/subid": {
+            "get": {
+                "summary": "SUBID Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/clicks": {
+            "get": {
+                "summary": "Clicks Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/fraud": {
+            "get": {
+                "summary": "Fraud Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/adjuststats": {
+            "post": {
+                "summary": "Adjust Stats",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "type": "conversions",
+                                    "date": "2025-05-21",
+                                    "campaignId": 358,
+                                    "action": "add",
+                                    "quantity": 96,
+                                    "publisherId": "17",
+                                    "goal": "682ebbdf1e968b8a4e059fb1",
+                                    "payout": 7591.234518660633,
+                                    "revenue": 7344.534305401245
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/reports/postback": {
+            "get": {
+                "summary": "Postback Sent Logs",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/reports/findConv": {
+            "get": {
+                "summary": "Find Conversion by txn_id",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/smtp/send-email": {
+            "post": {
+                "summary": "Send Emails Via SMTP Service",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "template_name": "publisher_registration",
+                                    "user_id": 195,
+                                    "opts": {
+                                        "passowrd": "test@123#"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/trackingDomains/:domain": {
+            "post": {
+                "summary": "Update Tracking Domain",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "protocol": "http",
+                                    "def": 0,
+                                    "pubs": [
+                                        9365,
+                                        4271
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Tracking Domain",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/trackingDomains": {
+            "post": {
+                "summary": "Create Tracking Domain",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "host": "{{random_domain}}",
+                                    "protocol": "https",
+                                    "def": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Fetch Tracking Domain",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/targetingdata/devices": {
+            "get": {
+                "summary": "Fetch All Devices",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/targetingdata/os": {
+            "get": {
+                "summary": "Fetch All Operating System",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/targetingdata/countries": {
+            "get": {
+                "summary": "Fetch All Countries",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/targetingdata/regions": {
+            "get": {
+                "summary": "Fetch All Regions",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/targetingdata/cities": {
+            "get": {
+                "summary": "Fetch All Cities",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/targetingdata/isps": {
+            "get": {
+                "summary": "Fetch All Isps",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/categories/68a2de725d48f267205b20cb": {
+            "post": {
+                "summary": "Update Category",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/categories/:id": {
+            "get": {
+                "summary": "Fetch Category",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Category",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/categories": {
+            "post": {
+                "summary": "Create Category",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Fetch All Categories",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/coupons/:code": {
+            "get": {
+                "summary": "Fetch Coupon Code",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Coupon Code",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/coupons/string": {
+            "post": {
+                "summary": "Edit Coupon Code",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "campaignId": 398,
+                                    "status": "expired"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/coupons": {
+            "get": {
+                "summary": "Fetch All Coupon Codes",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Coupon Code",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "code": "string",
+                                    "status": "active",
+                                    "type": "exclusive",
+                                    "campaignId": "string",
+                                    "publisherIds": [
+                                        "string",
+                                        "string"
+                                    ],
+                                    "excludedPubIds": [
+                                        "string",
+                                        "string"
+                                    ],
+                                    "description": "string",
+                                    "startDate": "1980-05-21",
+                                    "endDate": "1987-06-06",
+                                    "payouts": [
+                                        {
+                                            "model": "cpa",
+                                            "currency": "string",
+                                            "payout": 6703,
+                                            "revenue": 4027,
+                                            "fixedPayout": 2591,
+                                            "fixedRevenue": 9960,
+                                            "rules": [
+                                                {
+                                                    "variable": "sub9",
+                                                    "op": "starts_with",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                },
+                                                {
+                                                    "variable": "sub4",
+                                                    "op": "exact_match",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "model": "cps",
+                                            "currency": "string",
+                                            "payout": 3715,
+                                            "revenue": 5962,
+                                            "fixedPayout": 5321,
+                                            "fixedRevenue": 1213,
+                                            "rules": [
+                                                {
+                                                    "variable": "sub5",
+                                                    "op": "is_empty",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                },
+                                                {
+                                                    "variable": "sale",
+                                                    "op": "is_not_empty",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "futurePayouts": [
+                                        {
+                                            "fromDate": "string",
+                                            "model": "cpa",
+                                            "currency": "string",
+                                            "payout": 9858,
+                                            "revenue": 208,
+                                            "fixedPayout": 6087,
+                                            "fixedRevenue": 6949,
+                                            "rules": [
+                                                {
+                                                    "variable": "sub6",
+                                                    "op": "regex",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                },
+                                                {
+                                                    "variable": "sale",
+                                                    "op": "exact_match",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "fromDate": "string",
+                                            "model": "cpa",
+                                            "currency": "string",
+                                            "payout": 7936,
+                                            "revenue": 5126,
+                                            "fixedPayout": 8566,
+                                            "fixedRevenue": 1358,
+                                            "rules": [
+                                                {
+                                                    "variable": "sub3",
+                                                    "op": "less_than",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                },
+                                                {
+                                                    "variable": "sub8",
+                                                    "op": "contains",
+                                                    "values": [
+                                                        "string",
+                                                        "string"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/fraudrules/:id": {
+            "get": {
+                "summary": "Get Fraud Rule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Fraud Rule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/fraudrules/68a432e875a2de1bebf19aa3": {
+            "patch": {
+                "summary": "Update Fraud Rule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/fraudrules": {
+            "get": {
+                "summary": "Get all Fraud Rules",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create Fraud Rule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string",
+                                    "scope": "click",
+                                    "ctitRule": 0,
+                                    "cancelConversions": 0,
+                                    "uniqueIpCheck": 0,
+                                    "cancelUniqueIpConv": 0,
+                                    "validateDeviceId": 0,
+                                    "emptyDeviceId": 0,
+                                    "action": "mark",
+                                    "uniqueIpClickLevel": 0,
+                                    "uipvar": "ipaddr",
+                                    "uniqueConvSubId": 0,
+                                    "uniqueConvSubIdVar": "p1",
+                                    "cancelSubidConversion": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/deals/:id": {
+            "get": {
+                "summary": "Fetch Deal",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/deals/string": {
+            "delete": {
+                "summary": "Delete Deal",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/deals": {
+            "get": {
+                "summary": "Fetch All Deals",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/campaign/{{randomQueryValue}}/access": {
+            "post": {
+                "summary": "Check Campaign Access",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/bulk-deeplink": {
+            "post": {
+                "summary": "Deals",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "deeplinks": [
+                                        {
+                                            "url": "https://www.example.com",
+                                            "campaignIds": [
+                                                "2223"
+                                            ]
+                                        }
+                                    ],
+                                    "adnParams": {
+                                        "p1": "{p1}"
+                                    },
+                                    "encodeURL": false
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/publishers/profile": {
+            "post": {
+                "summary": "Edit Profile",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get profile",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/coupons": {
+            "get": {
+                "summary": "coupons",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/deals": {
+            "get": {
+                "summary": "deals",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/reports": {
+            "get": {
+                "summary": "Performance Report",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/reports-kpi": {
+            "get": {
+                "summary": "Get KPI",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/categories": {
+            "get": {
+                "summary": "get category",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publisher/campaigns": {
+            "get": {
+                "summary": "fetch all campaigns",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publisher/campaign/2236": {
+            "get": {
+                "summary": "fetch single campaign",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/publishers/477/campaignsCount": {
+            "get": {
+                "summary": "access count",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/campaigns": {
+            "get": {
+                "summary": "fetch all campaign",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/v2/advertisers/reports": {
+            "get": {
+                "summary": "Report API",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-Api-Key"
+            }
+        }
+    },
+    "security": [
+        {
+            "ApiKeyAuth": []
+        }
+    ]
+}
