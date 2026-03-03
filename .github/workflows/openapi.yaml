@@ -1,1 +1,34 @@
+name: API Security Scan using ZAP (Postman Collection)
 
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  api-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # 1️⃣ Checkout repo
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # 2️⃣ Run ZAP API Scan using OpenAPI
+    - name: Run ZAP API Scan
+      uses: zaproxy/action-api-scan@v0.10.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        format: openapi
+        target: 'openapi/openapi.yaml'
+        fail_action: false
+        cmd_options: >
+          -a
+          -z "
+          -config replacer.full_list(0).description=api-key
+          -config replacer.full_list(0).enabled=true
+          -config replacer.full_list(0).matchtype=REQ_HEADER
+          -config replacer.full_list(0).matchstr=X-Api-Key
+          -config replacer.full_list(0).replacement=${{ secrets.TRACKIER_API_KEY }}
+          "
