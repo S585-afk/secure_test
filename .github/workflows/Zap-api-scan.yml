@@ -17,6 +17,7 @@ jobs:
           target: 'postman/trackier_publiser_openapi.json'
           format: openapi
           fail_action: false
+          allow_issue_writing: false
           cmd_options: >
             -a
             -z "
