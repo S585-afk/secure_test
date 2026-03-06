@@ -16,13 +16,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Run ZAP API Scan
         uses: zaproxy/action-api-scan@v0.10.0
         with:
-          target: 'postman/trackier_publiser_openapi.json'
+          target: 'openapi/trackier_openapi.yaml'
           format: openapi
           fail_action: false
           allow_issue_writing: false
