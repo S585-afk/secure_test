@@ -1,402 +1,233 @@
-{
-  "x-openapi": "3.0.3",
-  "x-info": {
-    "title": "Trackier Admin API Docs",
-    "version": "1.0.0",
-    "description": "Full OpenAPI generated from Postman collection"
-  },
-  "x-servers": [
-    {
-      "url": "https://api.trackier.com"
-    }
-  ],
-  "x-paths": {
-    "/v2/offers/incent": {
-      "get": {
-        "summary": "Find all incent offers",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/4/transactions": {
-      "get": {
-        "summary": "Transactions & Payments",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/:id": {
-      "get": {
-        "summary": "Find Publisher by ID",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a publisher",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/921": {
-      "post": {
-        "summary": "Edit a publisher",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "username": "test"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v2/publishers/:publisherId/subaccounts/:id": {
-      "get": {
-        "summary": "Find Sub Account of Publisher By Id",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete Sub Account of Publisher",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/4/subaccounts/3": {
-      "post": {
-        "summary": "Edit Sub Account of Publisher",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "name": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v2/publishers/:publisherId/subaccounts": {
-      "get": {
-        "summary": "Get All Sub Accounts of Publisher",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/4/subaccounts": {
-      "post": {
-        "summary": "Create Sub Account for Publisher",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "name": "string",
-                  "email": "{{unique_email}}",
-                  "status": "paused",
-                  "username": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v2/publishers/4/notes/68b5440e4d740b1ce046766f": {
-      "get": {
-        "summary": "Find Publisher Note",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/:pubId/notes/:noteId": {
-      "delete": {
-        "summary": "Delete Publisher Note",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      }
-    },
-    "/v2/publishers/4/notes": {
-      "get": {
-        "summary": "Find All Publisher Notes",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create Publisher Notes",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "message": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v2/publishers": {
-      "get": {
-        "summary": "Find all publishers",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        }
-      },
-      "post": {
-        "summary": "createpubliser",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "username": "Nikhiltestuser02",
-                  "name": "Test User",
-                  "email": "testuseor9902@example.com",
-                  "password": "Test@1234"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-"x-components": {
-    "securitySchemes": {
-      "ApiKeyAuth": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "X-Api-Key"
-      }
-    }
-  },
-  "x-security": [
-    {
-      "ApiKeyAuth": []
-    }
-  ]
-}
+openapi: 3.0.3
+info:
+  title: Trackier Publisher API
+  version: 1.0.0
+  description: Publisher management APIs for Trackier
 
+servers:
+  - url: https://api.trackier.com
 
+paths:
 
+  /v2/publishers:
+    get:
+      summary: Find all publishers
+      security:
+        - ApiKeyAuth: []
+      responses:
+        "200":
+          description: Successful response
+        "401":
+          description: Unauthorized
 
+    post:
+      summary: Create publisher
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: Nikhiltestuser02
+                name: Test User
+                email: testuser@example.com
+                password: Test@1234
+      responses:
+        "200":
+          description: Publisher created
 
+  /v2/publishers/{id}:
+    get:
+      summary: Find publisher by ID
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Publisher details
 
-    
+    delete:
+      summary: Delete publisher
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Publisher deleted
+
+  /v2/publishers/{id}/transactions:
+    get:
+      summary: Transactions & Payments
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Transactions list
+
+  /v2/publishers/{publisherId}/subaccounts:
+    get:
+      summary: Get all subaccounts
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: publisherId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Subaccounts list
+
+    post:
+      summary: Create subaccount
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: publisherId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Sub User
+                email: subuser@example.com
+                status: paused
+                username: subuser01
+      responses:
+        "200":
+          description: Subaccount created
+
+  /v2/publishers/{publisherId}/subaccounts/{id}:
+    get:
+      summary: Get subaccount by ID
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: publisherId
+          in: path
+          required: true
+          schema:
+            type: integer
+
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Subaccount details
+
+    delete:
+      summary: Delete subaccount
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: publisherId
+          in: path
+          required: true
+          schema:
+            type: integer
+
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Subaccount deleted
+
+  /v2/publishers/{publisherId}/notes:
+    get:
+      summary: Get all publisher notes
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: publisherId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Notes list
+
+    post:
+      summary: Create publisher note
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: publisherId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                message: Test note
+      responses:
+        "200":
+          description: Note created
+
+  /v2/publishers/{pubId}/notes/{noteId}:
+    delete:
+      summary: Delete publisher note
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: pubId
+          in: path
+          required: true
+          schema:
+            type: integer
+
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Note deleted
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+
+security:
+  - ApiKeyAuth: []
