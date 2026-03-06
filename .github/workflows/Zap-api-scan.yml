@@ -23,7 +23,7 @@ jobs:
       - name: Run ZAP API Scan
         uses: zaproxy/action-api-scan@v0.10.0
         with:
-          target: 'openapi/trackier_openapi.yaml'
+          target: 'postman/publisher-api-openapi.yaml'
           format: openapi
           fail_action: false
           allow_issue_writing: false
