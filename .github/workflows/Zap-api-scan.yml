@@ -1,7 +1,11 @@
 name: ZAP API Security Scan - Trackier
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+      - develop
 
 permissions:
   contents: read
