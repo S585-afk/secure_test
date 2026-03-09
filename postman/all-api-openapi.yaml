@@ -1,16 +1,22 @@
- {
-    "openapi": "3.0.3",
-    "info": {
-        "title": "Trackier Admin API Docs",
-        "version": "1.0.0",
-        "description": "Full OpenAPI generated from Postman collection"
-    },
-    "servers": [
-        {
-            "url": "https://api.trackier.com"
-        }
-    ],
-    "paths": {
+openapi: 3.0.0
+info:
+  title: Trackier Admin API Docs
+  version: 1.0.0
+
+servers:
+  - url: https://api.trackier.com
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+
+security:
+  - ApiKeyAuth: []
+
+paths: {
         "/v2/offers/incent": {
             "get": {
                 "summary": "Find all incent offers",
