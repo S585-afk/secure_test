@@ -1,0 +1,2183 @@
+openapi: 3.0.3
+info:
+  title: Trackier Admin API (Security Optimized)
+  version: 1.0.0
+  description: Automatically generated security-testing optimized OpenAPI spec
+servers:
+- url: https://api.trackier.com
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+security:
+- ApiKeyAuth: []
+paths:
+  /{{baseUrl}}/v2/offers/incent?page=1&limit=100&pubId=780&source=hemant&order=desc&sortBy=id:
+    get:
+      summary: Find all incent offers
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pubId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: source
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/publishers/{id}/transactions:
+    get:
+      summary: Transactions & Payments
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/publishers/{id}:
+    get:
+      summary: Find Publisher by ID
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete a publisher
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Edit a publisher
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/publishers/{publisherId}/subaccounts/{id}:
+    get:
+      summary: Find Sub Account of Publisher By Id
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Sub Account of Publisher
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/publishers/{id}/subaccounts/{id}:
+    post:
+      summary: Edit Sub Account of Publisher
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/publishers/{publisherId}/subaccounts:
+    get:
+      summary: Get All Sub Accounts of Publisher
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/publishers/{id}/subaccounts:
+    post:
+      summary: Create Sub Account for Publisher
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/publishers/{id}/notes/68b5440e4d740b1ce046766f:
+    get:
+      summary: Find Publisher Note
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/publishers/{pubId}/notes/{noteId}:
+    delete:
+      summary: Delete Publisher Note
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/publishers/{id}/notes:
+    get:
+      summary: Find All Publisher Notes
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Create Publisher Notes
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/publishers:
+    get:
+      summary: Find all publishers
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: lastId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+    post:
+      summary: Create a new publisher
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers/{advertiserId}/subaccounts/{id}:
+    get:
+      summary: Find Sub Account of Advertiser By Id
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Sub Account of Advertiser
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/advertisers/{id}/subaccounts/{id}:
+    post:
+      summary: Edit Sub Account of Advertiser
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers/{advertiserId}/subaccounts:
+    get:
+      summary: Get All Sub Accounts of Advertiser
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/advertisers/{id}/subaccounts:
+    post:
+      summary: Create Sub Account for Advertiser
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers/{id}:
+    get:
+      summary: Find a single advertiser
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Update an Advertiser
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers/{id}?{id}=string:
+    delete:
+      summary: Delete an Advertiser
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: '{id}'
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/advertisers/{advertiser_id}/caps/{cap_id}:
+    get:
+      summary: Find an Advertiser Cap
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Advertiser Cap
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/advertisers/{id}/caps/68b8721f520a3534146c5c37:
+    post:
+      summary: Edit Advertiser Cap
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers/{advertiser_id}/caps:
+    get:
+      summary: Find All Advertiser Caps
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/advertisers/{id}/caps:
+    post:
+      summary: Create Advertiser Cap
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers/{advId}/notes/{noteId}:
+    get:
+      summary: Find Advertiser Note
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Advertiser Note
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/advertisers/{advId}/notes?apiKey=63ec7f541b157ffa19c6607bfa363ec7f541b196:
+    get:
+      summary: Find All Advertiser Notes
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/advertisers/{advId}/notes:
+    post:
+      summary: Create Advertiser Notes
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/advertisers:
+    get:
+      summary: Find All Advertisers
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: lastId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+    post:
+      summary: Create an advertiser
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/login:
+    post:
+      summary: Basic Login Endpoint
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/thumbnail:
+    post:
+      summary: Edit Campaign Thumbnail
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      summary: Delete Campaign Thumbnail
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{id}/s2s-tracking:
+    post:
+      summary: Edit Campaign S2S Tracking Setting
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/impression-tracking:
+    post:
+      summary: Edit Campaign Impression Tracking Setting
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/caps/68a454610022a23e5975c5d4:
+    post:
+      summary: Edit a Cap
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/caps/{capId}:
+    delete:
+      summary: Delete a Cap
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{id}/caps:
+    get:
+      summary: Find Campaign Caps
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Create Campaign Cap
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/lps/68a45534dd43b9780f1c8a5f:
+    post:
+      summary: Edit a Landing Page
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/lps/{lpId}:
+    delete:
+      summary: Delete a Landing Page
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{id}/lps:
+    get:
+      summary: FindAll landing pages
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Create a Landing Page
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/payouts/65b9040f9745225b743443c9:
+    post:
+      summary: Edit a payout
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/payouts/{payoutId}:
+    delete:
+      summary: Delete a payout
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{id}/payouts:
+    get:
+      summary: Get Campaign Payouts
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Add new campaign payout
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/goals/68a430bc0022a23e5970045a:
+    post:
+      summary: Edit Campaign Goal
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/goals/{goalId}:
+    delete:
+      summary: Delete a campaign goal
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{id}/goals:
+    get:
+      summary: Get Campaign Goals
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Create Campaign Goal
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/targetings:
+    get:
+      summary: Get All Campaign Targetings
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Create Campaign Targeting
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}:
+    get:
+      summary: Find Campaign by ID
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Edit a campaign
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      summary: Delete a campaign
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/timelines?start=2024-09-01&end=2024-09-01:
+    get:
+      summary: Get Campaigns Timelines.
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/campaigns/categories?apiKey=676127dabc91e6336735849f852676127dabc95c:
+    get:
+      summary: Get all campaigns categories
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/campaigns/status:
+    post:
+      summary: Bulk Campaign Status Change
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/bulkEdit:
+    post:
+      summary: Bulk Campaign Edit
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/access:
+    get:
+      summary: Find Campaign Access
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Update Campaign Access
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{id}/targetings/68a41e816eb6e5d717bdb2c5/rules/68a41e816eb6e5d717bdb2c8:
+    post:
+      summary: Edit Targeting Rule
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{campId}/targetings/{id}/rules/{ruleId}:
+    delete:
+      summary: Delete Targeting Rule
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{campId}/targetings/{id}/rules:
+    post:
+      summary: Add Rules to targeting block
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{campId}/targetings/{id}:
+    get:
+      summary: Get Campaign Targeting Rules
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Campaign Targeting
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Edit Campaign Targeting Block
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns/{campId}/notes/{noteId}:
+    get:
+      summary: Find Campaign Note
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Update Campaign Note
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      summary: Delete Campaign Note
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{campId}/notes:
+    get:
+      summary: Find All Campaign Notes
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/campaigns/{id}/notes:
+    post:
+      summary: Create Campaign Notes
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/campaigns:
+    get:
+      summary: Get All Campaigns
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: lastId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: advertiser
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: advertiser
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: geo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: objective
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: category
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: visibility
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: device
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: os
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: trafficChannels
+        in: query
+        required: false
+        schema:
+          type: string
+    post:
+      summary: Create Campaign
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/trackingLink/{id}/{id}:
+    post:
+      summary: Generate Tracking Link
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/invoices/{id}:
+    get:
+      summary: Get Invoice By ID
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Invoice
+      responses:
+        '200':
+          description: Success
+  ? /{{baseUrl}}/v2/invoices/preview?user_id=67500720cd9da15af712423f&start=2024-06-01&end=2025-01-01&prefType=month_wise&invCurrency=INR&skipZeroPayouts=false&payoutField=string
+  : get:
+      summary: Get Invoice Preview
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: user_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: prefType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: invCurrency
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: skipZeroPayouts
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: payoutField
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/invoices?start=2024-06-01&end=2025-01-01:
+    get:
+      summary: Get Invoices List
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: utype
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/invoices:
+    post:
+      summary: Create Invoice
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/signupfields/publisher:
+    get:
+      summary: Publisher Signup Questions
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/signupfields/advertiser:
+    get:
+      summary: Advertiser SignUp Questions
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/network/notifications:
+    get:
+      summary: Get Notifications
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/network/conversions?limit=100&page=1&start=2024-06-01 00{00}{00}&end=2024-06-30 23{59}{59}:
+    get:
+      summary: Conversion Report Logs
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: zone
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: source
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/network/impressions:
+    get:
+      summary: Impressions Report Logs
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: zone
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/conversions/bulkUpload:
+    post:
+      summary: Bulk Conversion Upload
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/conversions/bulkUpload?apiKey=694251724d04aed9c53eb76889a694251724d081:
+    post:
+      summary: Multiple conversions in data array
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/publishers?apiKey=694251724d04aed9c53eb76889a694251724d081:
+    post:
+      summary: createpubliser
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/editConv?id=689e0bd5c7ed4b04fccf6841&status=pending:
+    post:
+      summary: Conversion Status Change
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: click_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: txn_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: date
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/jobs/{id}:
+    get:
+      summary: Find Job By Id
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/jobs:
+    get:
+      summary: Find All Jobs
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/accounts/{account_id}:
+    get:
+      summary: Find Team Member
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/accounts/{id}:
+    post:
+      summary: Edit Team Member
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/accounts:
+    get:
+      summary: Find All Team Members
+      responses:
+        '200':
+          description: Success
+    post:
+      summary: Add Team Member
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/postback:
+    post:
+      summary: Create Postback
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/facebook/configurations?page=-1&limit=0:
+    get:
+      summary: Get all Facebook configurations
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/facebook/configurations?publisherIds[]=64f1a2b3c4d5e6f789012345:
+    get:
+      summary: Publisher filter
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: publisherIds[]
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/facebook/configuration/641038f3a2bdbe3d132450cb:
+    get:
+      summary: Valid configuration ID
+      responses:
+        '200':
+          description: Success
+  /https://api.trackier.com/v2/facebook/configuration:
+    post:
+      summary: Create configuration with valid data
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/facebook/configuration/6992beb663c867893e4c62a2:
+    patch:
+      summary: Update Facebook configuration
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      summary: Delete Facebook configuration
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/smart-link/{id}:
+    delete:
+      summary: Delete smartlink by id
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/smart-link/7G6rJQfwr:
+    post:
+      summary: Edit Smartlink by Id
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/smart-link:
+    post:
+      summary: Create Smartlink
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    get:
+      summary: Get All Smartlinks
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/campaign:
+    get:
+      summary: Campaign Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/publisher:
+    get:
+      summary: Publisher Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/advertiser:
+    get:
+      summary: Advertiser Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/daily:
+    get:
+      summary: Daily Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/goal:
+    get:
+      summary: Goal Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/custom?remove_zero_data=false:
+    get:
+      summary: Custom Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: remove_zero_data
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/subid:
+    get:
+      summary: SUBID Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: zone
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: remove_zero_data
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/clicks:
+    get:
+      summary: Clicks Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: hasNextPage
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageToken
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: zone
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: click_id
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/fraud?apiKey=676127dabc91e6336735849f852676127dabc95c:
+    get:
+      summary: Fraud Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/adjuststats:
+    post:
+      summary: Adjust Stats
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/reports/postback?start=2024-01-01&end=2024-01-10:
+    get:
+      summary: Postback Sent Logs
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: conversion_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: postback_id
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/reports/findConv?txn_id=garYzJnVh&date=2025-07-23:
+    get:
+      summary: Find Conversion by txn_id
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: txn_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: date
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/smtp/send-email:
+    post:
+      summary: Send Emails Via SMTP Service
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/trackingDomains/{domain}:
+    post:
+      summary: Update Tracking Domain
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      summary: Delete Tracking Domain
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/trackingDomains:
+    post:
+      summary: Create Tracking Domain
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    get:
+      summary: Fetch Tracking Domain
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/targetingdata/devices:
+    get:
+      summary: Fetch All Devices
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/targetingdata/os:
+    get:
+      summary: Fetch All Operating System
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/targetingdata/countries:
+    get:
+      summary: Fetch All Countries
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/targetingdata/regions:
+    get:
+      summary: Fetch All Regions
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: country
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/targetingdata/cities?q=string&country=string&page=481:
+    get:
+      summary: Fetch All Cities
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: country
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/targetingdata/isps:
+    get:
+      summary: Fetch All Isps
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: country
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+  /{{baseUrl}}/v2/categories/68a2de725d48f267205b20cb:
+    post:
+      summary: Update Category
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/categories/{id}:
+    get:
+      summary: Fetch Category
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Category
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/categories:
+    post:
+      summary: Create Category
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    get:
+      summary: Fetch All Categories
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/coupons/{code}:
+    get:
+      summary: Fetch Coupon Code
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Coupon Code
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/coupons/string:
+    post:
+      summary: Edit Coupon Code
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/coupons:
+    get:
+      summary: Fetch All Coupon Codes
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: filters
+        in: query
+        required: false
+        schema:
+          type: string
+    post:
+      summary: Create Coupon Code
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/fraudrules/{id}:
+    get:
+      summary: Get Fraud Rule
+      responses:
+        '200':
+          description: Success
+    delete:
+      summary: Delete Fraud Rule
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/fraudrules/68a432e875a2de1bebf19aa3:
+    patch:
+      summary: Update Fraud Rule
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/fraudrules:
+    get:
+      summary: Get all Fraud Rules
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+    post:
+      summary: Create Fraud Rule
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /{{baseUrl}}/v2/deals/{id}:
+    get:
+      summary: Fetch Deal
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/deals/string:
+    delete:
+      summary: Delete Deal
+      responses:
+        '200':
+          description: Success
+  /{{baseUrl}}/v2/deals:
+    get:
+      summary: Fetch All Deals
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: name
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: campaigns
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: publishers
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+  /:
+    get:
+      summary: get default field
+      responses:
+        '200':
+          description: Success
+  ? /https://api.trackier.com/v2/publishers/campaign/{{randomQueryValue}}/access?apiKey=664c66b1ad27b0d00260669408e664c66b1ad2df
+  : post:
+      summary: Check Campaign Access
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/publishers/bulk-deeplink?apiKey=664c66b1ad27b0d00260669408e664c66b1ad2df:
+    post:
+      summary: Deals
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/publishers/profile?apiKey=664c66b1ad27b0d00260669408e664c66b1ad2df:
+    post:
+      summary: Edit Profile
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /https://api.trackier.com/v2/publishers/coupons?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: coupons
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publishers/deals?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: deals
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  ? /https://api.trackier.com/v2/publishers/reports?apiKey=68a6d0cb544f7ce2fbf9ec3df8768a6d0cb54536&start=2022-06-07&end=2022-08-07
+  : get:
+      summary: Performance Report
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publishers/reports-kpi?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: Get KPI
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publishers/profile?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: Get profile
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publishers/categories?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: get category
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publisher/campaigns?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: fetch all campaigns
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publisher/campaign/2236?apiKey=675687dc25d272a151578129339675687dc25da1:
+    get:
+      summary: fetch single campaign
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/publishers/{id}/campaignsCount?apiKey=63ec7f541b157ffa19c6607bfa363ec7f541b196:
+    get:
+      summary: access count
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/advertisers/campaigns?apiKey=664c65e872cfbe665f996fbc301664c65e872d5a:
+    get:
+      summary: fetch all campaign
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /https://api.trackier.com/v2/advertisers/reports?apiKey=664c65e872cfbe665f996fbc301664c65e872d5a:
+    get:
+      summary: Report API
+      responses:
+        '200':
+          description: Success
+      parameters:
+      - name: apiKey
+        in: query
+        required: false
+        schema:
+          type: string
+  /http://localhost{8500}/customfields/pubs/default/state:
+    get:
+      summary: get info
+      responses:
+        '200':
+          description: Success
+  /http://localhost{8500}/customfields/pubs/default/state/edit:
+    patch:
+      summary: Edit
+      responses:
+        '200':
+          description: Success
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
