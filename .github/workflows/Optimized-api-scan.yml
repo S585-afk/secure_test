@@ -1,4 +1,4 @@
-name: ZAP API Security Scan - Trackier
+name: Optimized Security Scan - Trackier
 
 on:
   push:
