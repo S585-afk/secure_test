@@ -113,7 +113,7 @@ paths:
   /v2/publishers/{publisherId}:
 
     parameters:
-      - $ref: '#/components/parameters/PublisherId'
+      - $ref: '#/components/parameters/16'
 
     get:
       summary: Get publisher by ID
@@ -127,7 +127,7 @@ paths:
         '200':
           description: Publisher deleted
 
-  /v2/publishers/{publisherId}/transactions:
+  /v2/publishers/{17}/transactions:
 
     parameters:
       - $ref: '#/components/parameters/PublisherId'
