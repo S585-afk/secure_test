@@ -2,201 +2,247 @@ openapi: 3.0.3
 info:
   title: Trackier Admin API
   version: 1.0.0
-  description: Security testing optimized OpenAPI specification
+  description: API specification for retrieving publishers
 
 servers:
   - url: https://api.trackier.com
 
-security:
-  - ApiKeyAuth: []
+paths:
+  /v2/publishers:
+    get:
+      summary: Find all publishers
+      description: Retrieve all publishers with optional filters
+
+      security:
+        - ApiKeyQuery: []
+
+      parameters:
+        - name: apiKey
+          in: query
+          required: true
+          description: API key for authentication
+          schema:
+            type: string
+            example: 123
+
+        - name: lastId
+          in: query
+          description: Last publisher id for pagination
+          schema:
+            type: integer
+            example: 10
+
+        - name: limit
+          in: query
+          description: Limit the number of records
+          schema:
+            type: integer
+            example: 5000
+            minimum: 1
+            maximum: 10000
+
+        - name: filters[name]
+          in: query
+          description: Filter publishers by name
+          schema:
+            type: string
+            example: Demo
+
+        - name: filters[email]
+          in: query
+          description: Filter publishers by email
+          schema:
+            type: string
+            format: email
+            example: user@example.com
+
+        - name: filters[company]
+          in: query
+          description: Filter publishers by company
+          schema:
+            type: string
+            example: TestCompany
+
+        - name: filters[ids][]
+          in: query
+          description: Filter publishers by IDs
+          schema:
+            type: array
+            items:
+              type: integer
+            example: [31, 54]
+
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publishers:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Publisher"
+
+                  lastId:
+                    type: integer
+                    example: 10
+
+                  pagination:
+                    type: object
+                    properties:
+                      totalCount:
+                        type: integer
+                        example: 100
+
+                      perPage:
+                        type: integer
+                        example: 5000
+
+        "400":
+          description: Bad request
 
 components:
 
   securitySchemes:
-    ApiKeyAuth:
+    ApiKeyQuery:
       type: apiKey
-      in: header
-      name: X-Api-Key
-
-  parameters:
-
-    PublisherId:
-      name: publisherId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Publisher unique ID
-
-    CampaignId:
-      name: campaignId
-      in: path
-      required: true
-      schema:
-        type: string
-
-    Page:
-      name: page
       in: query
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
-
-    Limit:
-      name: limit
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 500
-        example: 50
+      name: apiKey
 
   schemas:
 
     Publisher:
       type: object
+      required:
+        - id
+        - created
+        - hashId
+        - status
+        - email
+        - name
       properties:
-        name:
+
+        id:
+          type: integer
+          example: 101
+
+        modified:
           type: string
-          example: test publisher
+          format: date-time
+          example: 2020-01-07T11:10:09.000Z
+
+        created:
+          type: string
+          format: date-time
+          example: 2020-01-07T11:10:09.000Z
+
+        conversionsPending:
+          type: integer
+          example: 0
+
+        blockedSources:
+          type: array
+          items:
+            type: string
+
+        macro:
+          type: object
+          additionalProperties:
+            type: string
+
+        whitelistAdv:
+          type: array
+          items:
+            type: integer
+
+        is_demo:
+          type: boolean
+
+        unsubscribe:
+          type: boolean
+
+        tier_id:
+          type: string
+
+        ref_by:
+          type: string
+
+        manager_id:
+          type: string
+
+        hashId:
+          type: string
+
+        status:
+          type: string
+          enum:
+            - active
+            - pending
+            - disabled
+            - rejected
+
+        company:
+          type: string
+
+        signup_ip:
+          type: string
+          format: ipv4
+          nullable: true
+
+        tags:
+          type: array
+          items:
+            type: string
+
+        region:
+          type: object
+          properties:
+            currency:
+              type: string
+            lang:
+              type: string
+            country:
+              type: string
+            address:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zipcode:
+              type: string
+
+        managers:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              email:
+                type: string
+
+        currency:
+          type: string
+
+        login:
+          type: string
+          format: date-time
+          nullable: true
+
+        phone:
+          type: string
+
         email:
           type: string
           format: email
-        status:
-          type: string
-          enum:
-            - active
-            - paused
-            - blocked
 
-    Campaign:
-      type: object
-      properties:
         name:
           type: string
-          example: summer campaign
-        status:
+
+        username:
           type: string
-          enum:
-            - active
-            - paused
-        payout:
-          type: number
-          example: 2.5
-
-paths:
-
-  /v2/publishers:
-
-    get:
-      summary: Get all publishers
-      parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/Limit'
-      responses:
-        '200':
-          description: Publisher list
-
-    post:
-      summary: Create publisher
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Publisher'
-      responses:
-        '201':
-          description: Publisher created
-
-  /v2/publishers/{publisherId}:
-
-    parameters:
-      - $ref: '#/components/parameters/16'
-
-    get:
-      summary: Get publisher by ID
-      responses:
-        '200':
-          description: Publisher details
-
-    delete:
-      summary: Delete publisher
-      responses:
-        '200':
-          description: Publisher deleted
-
-  /v2/publishers/{17}/transactions:
-
-    parameters:
-      - $ref: '#/components/parameters/PublisherId'
-
-    get:
-      summary: Get publisher transactions
-      parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/Limit'
-      responses:
-        '200':
-          description: Transaction list
-
-  /v2/campaigns:
-
-    get:
-      summary: Get campaigns
-      parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/Limit'
-      responses:
-        '200':
-          description: Campaign list
-
-    post:
-      summary: Create campaign
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Campaign'
-      responses:
-        '201':
-          description: Campaign created
-
-  /v2/campaigns/{campaignId}:
-
-    parameters:
-      - $ref: '#/components/parameters/CampaignId'
-
-    get:
-      summary: Get campaign
-      responses:
-        '200':
-          description: Campaign details
-
-    delete:
-      summary: Delete campaign
-      responses:
-        '200':
-          description: Campaign deleted
-
-  /v2/login:
-
-    post:
-      summary: Login endpoint
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  format: email
-                password:
-                  type: string
-      responses:
-        '200':
-          description: Login success
