@@ -1,0 +1,232 @@
+openapi: 3.0.3
+info:
+  title: Trackier Admin API
+  version: 1.0.0
+  description: API specification for retrieving publishers
+
+servers:
+  - url: https://api.trackier.com
+
+paths:
+  /v2/publishers:
+    get:
+      summary: Find all publishers
+      description: Retrieve all publishers with optional filters
+
+      security:
+        - ApiKeyQuery: []
+
+      parameters:
+        - name: apiKey
+          in: query
+          required: true
+          description: API key for authentication
+          schema:
+            type: string
+            minLength: 10
+            example: 694251724d04aed9c53eb76889a694251724d081
+
+        - name: lastId
+          in: query
+          description: Last publisher id for pagination
+          schema:
+            type: integer
+            minimum: 1
+            example: 10
+
+        - name: limit
+          in: query
+          description: Limit the number of records
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            example: 5000
+
+        - name: filters[name]
+          in: query
+          description: Filter publishers by name
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 100
+            example: Demo
+
+        - name: filters[email]
+          in: query
+          description: Filter publishers by email
+          schema:
+            type: string
+            format: email
+            minLength: 5
+            example: user@example.com
+
+        - name: filters[company]
+          in: query
+          description: Filter publishers by company
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 150
+            example: TestCompany
+
+        - name: filters[ids]
+          in: query
+          description: Filter publishers by IDs
+          style: form
+          explode: true
+          schema:
+            type: array
+            minItems: 1
+            items:
+              type: integer
+              minimum: 1
+            example:
+              - 31
+              - 54
+
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publishers:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Publisher"
+
+                  lastId:
+                    type: integer
+                    example: 10
+
+                  pagination:
+                    type: object
+                    properties:
+                      totalCount:
+                        type: integer
+                        example: 100
+
+                      perPage:
+                        type: integer
+                        example: 5000
+
+        "400":
+          description: Bad request
+
+components:
+
+  securitySchemes:
+    ApiKeyQuery:
+      type: apiKey
+      in: query
+      name: apiKey
+
+  schemas:
+
+    Publisher:
+      type: object
+      required:
+        - id
+        - created
+        - hashId
+        - status
+        - email
+        - name
+
+      properties:
+
+        id:
+          type: integer
+          example: 101
+
+        modified:
+          type: string
+          format: date-time
+          example: 2020-01-07T11:10:09.000Z
+
+        created:
+          type: string
+          format: date-time
+          example: 2020-01-07T11:10:09.000Z
+
+        conversionsPending:
+          type: integer
+          example: 0
+
+        blockedSources:
+          type: array
+          items:
+            type: string
+
+        macro:
+          type: object
+          additionalProperties:
+            type: string
+
+        whitelistAdv:
+          type: array
+          items:
+            type: integer
+
+        is_demo:
+          type: boolean
+
+        unsubscribe:
+          type: boolean
+
+        tier_id:
+          type: string
+
+        ref_by:
+          type: string
+
+        manager_id:
+          type: string
+
+        hashId:
+          type: string
+
+        status:
+          type: string
+          enum:
+            - active
+            - pending
+            - disabled
+            - rejected
+
+        company:
+          type: string
+
+        signup_ip:
+          type: string
+          format: ipv4
+          nullable: true
+
+        tags:
+          type: array
+          items:
+            type: string
+
+        currency:
+          type: string
+
+        login:
+          type: string
+          format: date-time
+          nullable: true
+
+        phone:
+          type: string
+
+        email:
+          type: string
+          format: email
+
+        name:
+          type: string
+
+        username:
+          type: string
