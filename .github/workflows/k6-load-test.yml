@@ -1,0 +1,35 @@
+name: k6 Load Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install k6
+        run: |
+          sudo gpg -k
+          sudo apt update
+          sudo apt install -y gnupg ca-certificates
+          curl -s https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/k6-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt update
+          sudo apt install k6
+
+      - name: Run k6 load test
+        run: |
+          K6_PROMETHEUS_RW_SERVER_URL=${{ secrets.GRAFANA_PROM_URL }} \
+          K6_PROMETHEUS_RW_USERNAME=${{ secrets.GRAFANA_PROM_USER }} \
+          K6_PROMETHEUS_RW_PASSWORD=${{ secrets.GRAFANA_PROM_PASS }} \
+          k6 run \
+          -o experimental-prometheus-rw \
+          --tag test_run=${{ github.run_number }} \
+          loadTest/test.js
